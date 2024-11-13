@@ -10,6 +10,18 @@
       {
         "src": "/api/ministros",
         "dest": "/api/ministros.js"
+      },
+      {
+        "src": "/api/musicas",
+        "dest": "/api/musicas.js"
+      },
+      {
+        "src": "/api/escalas",
+        "dest": "/api/escalas.js"
+      },
+      {
+        "src": "/api/repertorios",
+        "dest": "/api/repertorios.js"
       }
     ]
   }
