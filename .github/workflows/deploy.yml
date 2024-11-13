@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_DATABASE: ${{ secrets.DB_DATABASE }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_SSL: ${{ secrets.DB_SSL }}
+        run: |
+          echo "Conectando ao banco de dados em $DB_HOST"
+          echo "Usando o banco de dados $DB_DATABASE com usuário $DB_USER"
+          # Aqui você pode rodar seu script que utiliza as variáveis de ambiente
+          # Exemplo de conexão com o banco de dados
+          # psql -h $DB_HOST -U $DB_USER -d $DB_DATABASE -p $DB_PORT -W $DB_PASSWORD --sslmode=$DB_SSL
