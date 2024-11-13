@@ -4,8 +4,8 @@ const pool = require('../db');
 module.exports = async (req, res) => {
   if (req.method === 'GET') {
     try {
-      const result = await pool.query('SELECT * FROM musicas');
-      res.status(200).json({ data: result.rows });
+      const musicas = await pool.query('SELECT * FROM musicas');
+      res.status(200).json({ data: musicas.rows });
     } catch (err) {
       console.error('Erro na consulta ao banco de dados', err);
       res.status(500).json({
