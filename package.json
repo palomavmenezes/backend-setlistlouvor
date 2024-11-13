@@ -4,7 +4,10 @@
     "description": "Estrutura Back End do Software de SetList do Ministério de Louvor",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "vercel dev",
+      "build": "vercel build",
+      "deploy": "vercel deploy"
     },
     "author": "",
     "license": "ISC",
